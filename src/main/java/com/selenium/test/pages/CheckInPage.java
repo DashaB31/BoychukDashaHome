@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ChecInPage {
+public class CheckInPage {
     private WebDriver _browser;
 
-    public ChecInPage(WebDriver driver) {
+    public CheckInPage(WebDriver driver) {
         _browser = driver;
     }
 
