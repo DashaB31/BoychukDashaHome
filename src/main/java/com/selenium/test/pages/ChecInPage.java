@@ -33,7 +33,7 @@ public class ChecInPage {
     }
 
     public String getAnswer() {
-        _browser.findElement(By.xpath("//*[@id=\"registration-form\"]/form/div[1]/p"));
-        return _browser.findElement(By.className("js-message-text")).getText();
+        WebElement message = _browser.findElement(By.cssSelector("#registration-form > form > div.alert.js-message.success > p"));
+        return message.getText();
     }
 }
