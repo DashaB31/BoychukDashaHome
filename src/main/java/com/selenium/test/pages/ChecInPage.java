@@ -5,30 +5,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ChecInPage {
-    private WebDriver driver;
+    private WebDriver _browser;
 
     public ChecInPage(WebDriver driver) {
-        this.driver = driver;
+        _browser = driver;
     }
 
-    public void newUserLoginPage() {
+    public void newUserLoginPage(String url) {
 
-        driver.get("https://leboutique.com/");
-        WebElement enterButton = driver.findElement(By.className("header__btn-auth"));
+        _browser.get(url);
+        WebElement enterButton = _browser.findElement(By.className("header__btn-auth"));
         enterButton.click();
-        enterButton = driver.findElement(By.className("class=\'control-link\'"));
+        enterButton = _browser.findElement(By.xpath("//a[contains(text(), 'Новый пользователь')]"));
         enterButton.click();
 
     }
 
     public void newUser() {
-        WebElement inputEmail = driver.findElement(By.className("class=\'js-email-value\'"));
+        WebElement inputEmail = _browser.findElement(By.xpath("//*[@id=\"registration-form\"]/form/div[2]/div[1]/div[1]/input"));
         inputEmail.clear();
         inputEmail.sendKeys("dboychuk31071@gmail.com");
-        WebElement iAgree = driver.findElement(By.xpath("//*[@id=\"registration-confirm\"]/i"));
+        WebElement iAgree = _browser.findElement(By.xpath("//*[@id=\"registration-confirm\"]/i"));
         iAgree.click();
-        WebElement fieldWoman = driver.findElement(By.cssSelector("#registration-form > form > div.b-left > div.controls.submit-controls.js-gender > div > a.btn.btn-48.s-yellow.js-submit"));
+        WebElement fieldWoman = _browser.findElement(By.cssSelector("#registration-form > form > div.b-left > div.controls.submit-controls.js-gender > div > a.btn.btn-48.s-yellow.js-submit"));
         fieldWoman.click();
 
+    }
+
+    public String getAnswer() {
+        _browser.findElement(By.xpath("//*[@id=\"registration-form\"]/form/div[1]/p"));
+        return _browser.findElement(By.className("js-message-text")).getText();
     }
 }
