@@ -35,12 +35,12 @@ public class ChecInPageTest {
 
     @Test
     public void checInPage() throws InterruptedException {
-        ChecInPage checInPage = new ChecInPage(driver);
-        checInPage.newUserLoginPage();
-        checInPage.newUser();
-        driver.findElement(By.xpath("//*[@id=\"registration-form\"]/form/div[1]/p"));
-        String title = driver.findElement(By.className("js-message-text")).getText();
-        Assert.assertThat(title, is("Для подтверждения регистрации на ваш адрес электронной почты отправлен email"));
+        ChecInPage testingPage = new ChecInPage(driver);
+        testingPage.newUserLoginPage("https://leboutique.com/");
+        testingPage.newUser();
+        String answer = testingPage.getAnswer();
+        LOGGER.info("answer="+answer);
+        Assert.assertThat(answer, is("Для подтверждения регистрации на ваш адрес электронной почты отправлен email"));
 
 
     }
