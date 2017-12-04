@@ -1,12 +1,11 @@
 package com.selenium.test;
 
-import com.selenium.test.pages.ChecInPage;
+import com.selenium.test.pages.CheckInPage;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -14,7 +13,7 @@ import java.io.File;
 
 import static org.hamcrest.core.Is.is;
 
-public class ChecInPageTest {
+public class CheckInPageTest {
     private static final Logger LOGGER = Logger.getLogger(LoginPageTest.class);
     private WebDriver driver;
 
@@ -35,7 +34,7 @@ public class ChecInPageTest {
 
     @Test
     public void checInPage() throws InterruptedException {
-        ChecInPage testingPage = new ChecInPage(driver);
+        CheckInPage testingPage = new CheckInPage(driver);
         testingPage.newUserLoginPage("https://leboutique.com/");
         testingPage.newUser();
         String answer = testingPage.getAnswer();
