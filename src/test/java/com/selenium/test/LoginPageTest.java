@@ -42,6 +42,10 @@ public class LoginPageTest {
     public void successfulLogin() throws InterruptedException {
         doLogin();
 
+        WebElement profileHead = driver.findElement(By.id("js-profile-switcher"));
+        Assert.assertThat(profileHead, not(null));
+        profileHead.click();
+
         WebElement  header = driver.findElement(By.className("i i_man i_man_white"));
         Assert.assertThat(header, not(null));
 
@@ -55,8 +59,5 @@ public class LoginPageTest {
         loginPage.login();
         Timeout.seconds(10);
 
-        WebElement profileHead = driver.findElement(By.cssSelector("#js-profile-switcher"));
-     //   Assert.assertThat(profileHead, not(null));
-        profileHead.click();
     }
 }
