@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
+import static org.junit.Assert.*;
 
 public class LoginPageTest {
     private static final Logger LOGGER = Logger.getLogger(LoginPageTest.class);
@@ -31,6 +32,8 @@ public class LoginPageTest {
         System.setProperty("webdriver.chrome.driver", fileFF.getAbsolutePath());
         driver = new ChromeDriver();
         LOGGER.info("Chrome is started");
+
+        Timeout.seconds(20);
     }
 
     @After
@@ -40,24 +43,15 @@ public class LoginPageTest {
 
     @Test
     public void successfulLogin() throws InterruptedException {
-        doLogin();
-
-        WebElement profileHead = driver.findElement(By.id("js-profile-switcher"));
-        Assert.assertThat(profileHead, not(null));
-        profileHead.click();
-
-        WebElement  header = driver.findElement(By.className("i i_man i_man_white"));
-        Assert.assertThat(header, not(null));
-
-        String title = header.getText();
-        Assert.assertThat(title,is("dboychuk3107@gmail.com"));
+        LoginPage loginPage = doLogin();
+        String title = loginPage.getLoginName();
+        assertEquals(LoginPage.LOGIN, title);
     }
 
-    public void doLogin() {
+    public LoginPage doLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
         loginPage.login();
-        Timeout.seconds(10);
-
+        return loginPage;
     }
 }
