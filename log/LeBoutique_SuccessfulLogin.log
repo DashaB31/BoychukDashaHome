@@ -67,3 +67,32 @@
 2017-04-12 23:27:41   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
 2017-04-12 23:28:04   INFO [com.selenium.test.LoginPageTest] : Chrome is started
 2017-04-12 23:28:57   INFO [com.selenium.test.LoginPageTest] : answer=
+2017-05-12 00:35:53   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-05-12 00:36:31   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 19:49:02   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 19:49:33   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 19:49:59   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:05:11   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:05:36   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:16:08   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:16:22   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:20:26   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:20:40   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:27:24   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:27:34   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:30:06   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:30:11   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 20:40:06   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 20:40:13   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 21:37:50   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 21:38:13   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 21:40:25   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 21:40:39   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 22:52:21   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 22:52:45   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 22:54:13   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 22:54:23   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 23:03:40   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 23:03:49   INFO [com.selenium.test.LoginPageTest] : Chrome is started
+2017-06-12 23:06:49   INFO [com.selenium.test.LoginPageTest] : Chrome will be started
+2017-06-12 23:06:56   INFO [com.selenium.test.LoginPageTest] : Chrome is started

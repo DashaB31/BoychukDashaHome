@@ -2,18 +2,22 @@ package com.selenium.test;
 
 import com.selenium.test.pages.LoginPage;
 import org.apache.log4j.Logger;
+import org.hamcrest.core.IsNot;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
 
 public class LoginPageTest {
     private static final Logger LOGGER = Logger.getLogger(LoginPageTest.class);
@@ -36,14 +40,24 @@ public class LoginPageTest {
 
     @Test
     public void successfulLogin() throws InterruptedException {
+        doLogin();
+
+        WebElement profileHead = driver.findElement(By.id("js-profile-switcher"));
+        Assert.assertThat(profileHead, not(null));
+        profileHead.click();
+
+        WebElement  header = driver.findElement(By.className("i i_man i_man_white"));
+        Assert.assertThat(header, not(null));
+
+        String title = header.getText();
+        Assert.assertThat(title,is("dboychuk3107@gmail.com"));
+    }
+
+    public void doLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
         loginPage.login();
-        TimeUnit.SECONDS.sleep(2);
-        driver.findElement(By.id("js-profile-menu-header")).click();
-        String title = driver.findElement(By.xpath("//*[@id=\"js-profile-menu-body\"]/div/div[1]/div/span[2]/span[1]")).getText();
+        Timeout.seconds(10);
 
-
-        Assert.assertThat(title,is("dboychuk3107@gmail.com"));
     }
 }
